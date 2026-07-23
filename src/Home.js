@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import profile from "./images/profile.jpg";
+import publicationImage from "./images/image.png";
 
 function Home() {
   return (
@@ -38,24 +39,85 @@ function Home() {
         </div>
 
         <div className="about-grid">
-          <div className="section-card">
-            <p>
-              Write something about yourself here. Mention your interests, skills,
-              projects, education, and the kind of work you enjoy creating.
-            </p>
-          </div>
-
           <div className="section-card experience-panel">
             <h3>Experience</h3>
 
             <div className="experience-grid">
               <Link to="/mphasis" className="experience-card">
-                <span>Mphasis Limited</span>
+                <div className="card-content">
+                  <span className="card-title">Mphasis Limited</span>
+                  <p className="card-text" text-align="justify"><b>Github Assist</b> : Worked 
+with .NET MVC, WebAPI. Created wrapper APIs that utilize GitHub REST API. Contributed on the frontend, backend and integration part. Deployed an SWA in Azure platform.</p>
+                </div>
               </Link>
 
               <Link to="/vact" className="experience-card">
-                <span>VACT Technologies</span>
+                <div className="card-content">
+                  <span className="card-title">VACT Technologies</span>
+                  <p className="card-text" text-align="justify">Worked on the Yocto Project, layers, recipes, and 
+package customization. Created two customized Linux 
+images— one minimal CLI image, one with a basic desktop UI and Python editor.</p>
+                </div>
               </Link>
+            </div>
+          </div>
+
+          <div className="section-card">
+            <h3>Education</h3>
+            <br />
+            <h4>SASTRA Deemed University, Thanjavur, India      :       Oct 2022 - Jul 2026</h4>
+            <br />
+            <p>B. Tech in Electronics & Communication Engineering -  <b>CGPA: 7.9081</b> <br/>
+            <p>Minor Specialization in Artificial Intelligence and Machine Learning</p>  </p> 
+            <br/>
+            <h4>Rank International Senior Secondary School : Jun 2021 - May 2022</h4>
+            <br/><p>12th Grade <b>Percentage: 87.8%</b></p>
+            <br/>
+            <h4>Rank International Senior Secondary School : Jun 2019 - March 2020</h4>
+            <br/><p>10th Grade <b>Percentage: 90.8%</b></p>
+          </div>
+
+          <div className="section-card experience-panel">
+            <h3>Projects</h3>
+
+            <div className="experience-grid">
+              <Link to="/criq" className="experience-card">
+                <div className="card-content">
+                  <span className="card-title">crIQ</span>
+                  <p className="card-text" text-align="justify">A Deep Learning Framework for Intelligent Cricket Strategy 
+and Phase-wise Score Forecasting. Applied 
+feature engineering, hyperparameter tuning, and regression/classification models to 
+optimize predictions.</p>
+                </div>
+              </Link>
+
+              <Link to="/evoting" className="experience-card">
+                <div className="card-content">
+                  <span className="card-title">e-Voting System</span>
+                  <p className="card-text" text-align="justify">A voting system using Lightweight cryptography in 
+ESP32 in order to provide encryption in IoT Communications. Cryptographic algorithms and RFID interfacing implemented using MicroPython. RFID vote cast and cloud upload.</p>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          <div className="section-card experience-panel">
+            <h3>Research Publications</h3>
+
+            <div className="publication-layout">
+              <Link to="/crypto" className="experience-card publication-card">
+                <div className="card-content">
+                  <span className="card-title">Lightweight Cryptography</span>
+                  <p className="card-text">Enhanced Substitution-Permutation Network Encryption technique for Lightweight
+Cryptography in Internet of Things (IoT) applications.<i>Best Paper Award</i> in Systems for a secure and sustainable world.<br/><b> IEEE ICSCC 2025, MITS, Kochi</b></p>
+                </div>
+              </Link>
+
+              <img
+                src={publicationImage}
+                alt="publication"
+                className="publication-image"
+              />
             </div>
           </div>
         </div>
