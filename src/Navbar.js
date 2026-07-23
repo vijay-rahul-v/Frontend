@@ -5,37 +5,28 @@ function Navbar() {
   const location = useLocation();
 
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        padding: "20px 40px",
-        background: "#222",
-        color: "white",
-        position: "sticky",
-        top: 0,
-        zIndex: 1000
-      }}
-    >
+    <nav className="top-nav">
       <h2>My Portfolio</h2>
 
-      <div style={{ display: "flex", gap: "30px" }}>
+      <div className="nav-links">
         {location.pathname === "/" ? (
           <>
-            <ScrollLink to="home" smooth duration={500} style={{cursor:"pointer"}}>
+            <ScrollLink to="home" smooth duration={500} className="nav-link">
               Home
             </ScrollLink>
 
-            <ScrollLink to="about" smooth duration={500} style={{cursor:"pointer"}}>
+            <ScrollLink to="about" smooth duration={500} className="nav-link">
               About
             </ScrollLink>
 
-            <ScrollLink to="contact" smooth duration={500} style={{cursor:"pointer"}}>
+            <ScrollLink to="contact" smooth duration={500} className="nav-link">
               Contact
             </ScrollLink>
           </>
         ) : (
-          <Link to="/">Home</Link>
+          <Link to="/" className="nav-link">
+            Home
+          </Link>
         )}
       </div>
     </nav>
