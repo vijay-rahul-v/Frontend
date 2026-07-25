@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "../Projects.css";
 import vactImg from "../images/vactimg.png";
 import yoctoIcon from "../images/skills/yocto.svg";
@@ -62,9 +61,6 @@ function Vact() {
         ))}
       </div>
 
-      <Link to="/" className="back-link">
-        Back to Home
-      </Link>
     </div>
   );
 }
