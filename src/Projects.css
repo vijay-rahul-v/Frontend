@@ -28,15 +28,25 @@ body {
 
 .photo-container {
   width: 70%;
-  max-width: 900px;
-  height: 380px;
+  max-width: 700px;
+  /* 1. Let the container height scale naturally with the image */
+  height: auto; 
   background: rgb(18, 27, 40);
-  border-radius: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+}
+
+.photo-container img {
+  /* 2. Scale the width and let height match the photo's true proportions */
+  width: 100%;
+  height: auto;
+  
+  /* 3. Your requested 2px border and curve */
   border: 2px solid rgb(246, 178, 107);
+  border-radius: 18px;
+  display: block;
 }
 
 .photo-placeholder {

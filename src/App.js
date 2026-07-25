@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Home from "./Home";
@@ -13,26 +13,34 @@ const HOME_SCROLL_KEY = "portfolio-home-scroll";
 function ScrollToTop() {
   const { pathname } = useLocation();
   const previousPathnameRef = useRef(pathname);
+  const initialLoadRef = useRef(true);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (typeof window === "undefined") {
       return;
     }
 
     window.history.scrollRestoration = "manual";
 
-    if (previousPathnameRef.current === "/" && pathname !== "/") {
-      sessionStorage.setItem(HOME_SCROLL_KEY, String(window.scrollY));
-    }
-
     if (pathname === "/") {
-      const savedScroll = sessionStorage.getItem(HOME_SCROLL_KEY);
-      const targetScroll = savedScroll ? Number(savedScroll) : 0;
-      window.scrollTo(0, targetScroll);
+      if (initialLoadRef.current) {
+        sessionStorage.removeItem(HOME_SCROLL_KEY);
+        window.scrollTo(0, 0);
+      } else if (previousPathnameRef.current === "/" && pathname === "/") {
+        window.scrollTo(0, 0);
+      } else {
+        const savedScroll = sessionStorage.getItem(HOME_SCROLL_KEY);
+        const targetScroll = savedScroll ? Number(savedScroll) : 0;
+        window.scrollTo(0, targetScroll);
+      }
     } else {
+      if (previousPathnameRef.current === "/") {
+        sessionStorage.setItem(HOME_SCROLL_KEY, String(window.scrollY));
+      }
       window.scrollTo(0, 0);
     }
 
+    initialLoadRef.current = false;
     previousPathnameRef.current = pathname;
   }, [pathname]);
 

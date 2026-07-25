@@ -1,4 +1,6 @@
 import "../Projects.css";
+import cryptoImg from "../images/crypto.png";
+import bestPaperAwardImg from "../images/bestpaperaward.png";
 
 function Crypto() {
   const skills = [
@@ -13,20 +15,35 @@ function Crypto() {
   return (
     <div className="page">
       <h1 className="title">Lightweight Cryptography</h1>
-      <h2> Metageeks Program : Trainee Software Engineer</h2>
+      <h2> Enhanced Substitution-Permutation Network Encryption technique for Lightweight 
+Cryptography in IoT applications</h2>
       <br/>
 
 
       <div className="photo-container">
-        <div className="photo-placeholder">Paper Image Here</div>
+        <a href="https://ieeexplore.ieee.org/document/11233824" target="_blank" rel="noreferrer">
+          <img src={cryptoImg} alt="Lightweight Cryptography" />
+        </a>
       </div>
 
       <div className="description">
         <h2 className="description-title">Description</h2>
         <p>
-          Add your publication details for Lightweight Cryptography here.
-          Describe the research focus, methods, and findings.
+          This work consists of a specifically designed algorithm with multiple permutation and 
+substitution operations while achieving lightweight calculations. This multiple - block cipher 
+implements a 2D logistic-sine chaotic map which is used to generate a random key; an 
+S-Box table with  permutation operations, in each round, is used in the proposed method 
+to encrypt the data. Can be utilized for secure communication in IoT applications. Published in IEEE Xplore on 17th November, 2025.   
         </p>
+        <br/>
+        <p>
+          Received Best Paper Award in Systems for a secure and sustainable world
+        </p>
+      </div>
+
+      <h2 className="description-title">Best Paper Award</h2>
+      <div className="photo-container">
+        <img src={bestPaperAwardImg} alt="Best paper award" />
       </div>
 
       <h2 className="section-title">Skills Involved</h2>

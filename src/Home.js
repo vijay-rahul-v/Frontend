@@ -3,6 +3,33 @@ import profile from "./images/profile.jpg";
 import publicationImage from "./images/image.png";
 
 function Home() {
+  const smoothScrollTo = (event, sectionId) => {
+    event.preventDefault();
+    const target = document.getElementById(sectionId);
+    if (!target) return;
+
+    const startY = window.scrollY;
+    const targetY = target.getBoundingClientRect().top + startY - 80;
+    const distance = targetY - startY;
+    const duration = 1000;
+    const startTime = performance.now();
+
+    const easeInOutQuad = (t) =>
+      t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+
+    const animateScroll = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeInOutQuad(progress);
+      window.scrollTo(0, startY + distance * eased);
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
+  };
+
   return (
     <div className="home-page">
       <section id="home" className="hero-section">
@@ -18,10 +45,10 @@ function Home() {
           </p>
 
           <div className="hero-actions">
-            <a href="#about" className="btn-primary">
+            <a href="#about" className="btn-primary" onClick={(e) => smoothScrollTo(e, "about") }>
               Explore My Work
             </a>
-            <a href="#contact" className="btn-secondary">
+            <a href="#contact" className="btn-secondary" onClick={(e) => smoothScrollTo(e, "contact") }>
               Contact Me
             </a>
           </div>

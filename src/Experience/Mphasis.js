@@ -1,4 +1,5 @@
 import "../Projects.css";
+import mphasisImg from "../images/mphasisimg.jpeg";
 
 function Mphasis() {
   const skills = [
@@ -16,20 +17,18 @@ function Mphasis() {
       <h2> Metageeks Program : Trainee Software Engineer</h2>
       <br/>
 
-      <div className="photo-container">
-        <div className="photo-placeholder">Project Image Here</div>
+      <div className="photo-container" style={{ maxWidth: "900px" }}>
+        <img src={mphasisImg} alt="Mphasis project" />
       </div>
 
       <div className="description">
         <h2 className="description-title">Description</h2>
         <p>
-          Completed a 3 month training and internship program focused on Web Development. 
-Collaborated within a team of 10 to solve a problem in an existing application. Worked 
-with .NET MVC, WebAPI Created wrapper APIs that utilize GitHub REST API. 
-Contributed on the frontend, backend and integration part, worked with Github API’s and 
-workflows, Deployed a Static Web App in Azure platform. Managed splitting the work 
-among the UI team. Gained knowledge on Dotnet MVC, API communications, UI, GitHub 
-and workflows, SWA.
+         During my 3-month Web Development training and internship, I worked as part of a 10-member team to enhance an existing enterprise web application. I contributed to both the frontend and backend while collaborating closely with other team members throughout the development lifecycle. I developed user interface components using React.js, implemented new features, and integrated them with backend services. I also coordinated work distribution among the UI team to ensure smooth development and timely delivery. The internship provided hands-on experience in full-stack application development, API integration, version control, and cloud deployment using modern development practices.
+        </p>
+        <br/>
+        <p>
+          I worked with .NET MVC, ASP.NET Web API, and React.js to build and integrate application modules. I developed wrapper APIs that consumed the GitHub REST API for fetching repository data and file contents, and implemented the frontend logic to display files through a sliding side panel triggered by a "View" button. I gained practical knowledge of GitHub REST APIs, request handling, authentication, and API communication between the frontend and backend. I also worked with GitHub Actions by modifying the Azure Static Web App (SWA) workflow YAML file to support deployment requirements and successfully deployed the application on the Azure Static Web Apps platform.
         </p>
       </div>
 

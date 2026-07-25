@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "../Projects.css";
+import vactImg from "../images/vactimg.png";
 
 function Vact() {
   const skills = [
@@ -19,7 +20,7 @@ function Vact() {
 
 
       <div className="photo-container">
-        <div className="photo-placeholder">Experience Image Here</div>
+        <img src={vactImg} alt="Yocto Project embedded Linux" />
       </div>
 
       <div className="description">
