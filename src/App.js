@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import Mphasis from "./Experience/Mphasis";
@@ -7,9 +8,41 @@ import CrIQ from "./Projects/CrIQ";
 import Evoting from "./Projects/Evoting";
 import Crypto from "./Papers/Crypto";
 
+const HOME_SCROLL_KEY = "portfolio-home-scroll";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  const previousPathnameRef = useRef(pathname);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.history.scrollRestoration = "manual";
+
+    if (previousPathnameRef.current === "/" && pathname !== "/") {
+      sessionStorage.setItem(HOME_SCROLL_KEY, String(window.scrollY));
+    }
+
+    if (pathname === "/") {
+      const savedScroll = sessionStorage.getItem(HOME_SCROLL_KEY);
+      const targetScroll = savedScroll ? Number(savedScroll) : 0;
+      window.scrollTo(0, targetScroll);
+    } else {
+      window.scrollTo(0, 0);
+    }
+
+    previousPathnameRef.current = pathname;
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
 
       <Routes>

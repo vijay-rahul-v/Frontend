@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: rgb(31, 28, 27);
+}
+
+.page {
+  min-height: 100vh;
+  background: rgb(31, 28, 27);
+  color: white;
+  padding: 80px 0 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  color: rgb(246, 178, 107);
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.photo-container {
+  width: 70%;
+  max-width: 900px;
+  height: 380px;
+  background: rgb(18, 27, 40);
+  border-radius: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  border: 2px solid rgb(246, 178, 107);
+}
+
+.photo-placeholder {
+  color: rgb(246, 178, 107);
+  font-size: 1.2rem;
+}
+
+.description {
+  width: 70%;
+  max-width: 900px;
+  background: rgb(18, 27, 40);
+  padding: 25px;
+  border-radius: 18px;
+  color: white;
+  line-height: 1.7;
+  margin-bottom: 45px;
+}
+
+.description-title {
+  color: rgb(246, 178, 107);
+  margin-bottom: 15px;
+}
+
+.section-title {
+  width: 70%;
+  max-width: 900px;
+  color: rgb(246, 178, 107);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.skills-grid {
+  width: 70%;
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.skill-card {
+  background: rgb(18, 27, 40);
+  border-radius: 16px;
+  padding: 20px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(246, 178, 107);
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-placeholder {
+  width: 80px;
+  height: 80px;
+  border: 2px dashed rgb(246, 178, 107);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(246, 178, 107);
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  color: white;
+  font-size: 1.05rem;
+  font-weight: bold;
+}
+
+.back-link {
+  margin-top: 20px;
+  color: rgb(246, 178, 107);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .photo-container,
+  .description,
+  .section-title,
+  .skills-grid {
+    width: 90%;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-container {
+    height: 260px;
+  }
+}
