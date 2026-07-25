@@ -37,7 +37,7 @@ function ScrollToTop() {
       if (previousPathnameRef.current === "/") {
         sessionStorage.setItem(HOME_SCROLL_KEY, String(window.scrollY));
       }
-      window.scrollTo(0, 0);
+      window.scrollTo(0, 75);
     }
 
     initialLoadRef.current = false;
