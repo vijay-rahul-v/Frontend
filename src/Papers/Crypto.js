@@ -19,12 +19,12 @@ function Crypto() {
     }, [navigate]);
     
   const skills = [
-    "Cryptography",
-    "Research",
-    "Security",
-    "Innovation",
-    "Analysis",
-    "Technical Writing",
+    "Block Cipher",
+    "SPN",
+    "S-box",
+    "Chaotic Mapping",
+    "Micropython",
+    "ESP-32",
   ];
 
   return (

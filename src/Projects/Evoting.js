@@ -19,12 +19,12 @@ function Evoting() {
     }, [navigate]);
     
   const skills = [
-    "Full Stack",
-    "Security",
-    "Database Design",
-    "Authentication",
-    "Testing",
-    "System Design",
+    "ESP-32",
+    "Lightweight Cryptography",
+    "MicroPython",
+    "RFID Interfacing",
+    "I2C, UART Communication",
+    "ThingSpeak",
   ];
 
   return (

@@ -19,12 +19,12 @@ function Mphasis() {
 
 
   const skills = [
-    "GitHub",
+    "C#",
+    "ASP.NET MVC",
+    "ASP.NET WebAPI",
     "React.js",
-    "Node.js",
-    "MongoDB",
-    "Express.js",
-    "JavaScript",
+    "Github REST API",
+    "Azure SWA",
   ];
 
   return (

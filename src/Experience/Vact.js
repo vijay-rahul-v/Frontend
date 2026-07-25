@@ -19,12 +19,12 @@ function Vact() {
     }, [navigate]);
     
   const skills = [
-    "Teamwork",
-    "Problem Solving",
-    "Software Development",
-    "Client Communication",
-    "Project Delivery",
-    "Leadership",
+    "The Yocto Project",
+    "Buildroot",
+    "OpenEmbedded",
+    "Linux",
+    "Git",
+    "Poky",
   ];
 
   return (

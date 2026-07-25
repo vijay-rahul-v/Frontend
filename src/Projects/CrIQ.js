@@ -20,12 +20,12 @@ function CrIQ() {
     }, [navigate]);
     
   const skills = [
-    "React",
-    "JavaScript",
-    "UI/UX",
-    "Problem Solving",
-    "Testing",
-    "Collaboration",
+    "Deep Learning",
+    "Pre-processing",
+    "Google colab",
+    "Python ML Libraries",
+    "One-Hot Encoding",
+    "Regression Models",
   ];
 
   return (
