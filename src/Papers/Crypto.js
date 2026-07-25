@@ -1,8 +1,23 @@
 import "../Projects.css";
 import cryptoImg from "../images/crypto.png";
 import bestPaperAwardImg from "../images/bestpaperaward.png";
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { initTwoFingerSwipe } from '../twoFingerSwipe'; 
 
 function Crypto() {
+
+  const navigate = useNavigate();
+  
+    useEffect(() => {
+      const removeSwipeListener = initTwoFingerSwipe(() => {
+        console.log("Navigating home now...");
+        navigate('/'); 
+      });
+  
+      return () => removeSwipeListener();
+    }, [navigate]);
+    
   const skills = [
     "Cryptography",
     "Research",

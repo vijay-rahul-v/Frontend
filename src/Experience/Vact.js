@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
 import "../Projects.css";
 import vactImg from "../images/vactimg.png";
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { initTwoFingerSwipe } from '../twoFingerSwipe'; 
 
 function Vact() {
+
+  const navigate = useNavigate();
+  
+    useEffect(() => {
+      const removeSwipeListener = initTwoFingerSwipe(() => {
+        console.log("Navigating home now...");
+        navigate('/'); 
+      });
+  
+      return () => removeSwipeListener();
+    }, [navigate]);
+    
   const skills = [
     "Teamwork",
     "Problem Solving",

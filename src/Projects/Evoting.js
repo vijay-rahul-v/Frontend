@@ -1,8 +1,23 @@
 import "../Projects.css";
 import evoteImg from "../images/evote.png";
 import hardwareFlowImg from "../images/hardwareandflow.png";
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { initTwoFingerSwipe } from '../twoFingerSwipe'; 
 
 function Evoting() {
+
+  const navigate = useNavigate();
+  
+    useEffect(() => {
+      const removeSwipeListener = initTwoFingerSwipe(() => {
+        console.log("Navigating home now...");
+        navigate('/'); 
+      });
+  
+      return () => removeSwipeListener();
+    }, [navigate]);
+    
   const skills = [
     "Full Stack",
     "Security",

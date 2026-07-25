@@ -2,8 +2,23 @@ import "../Projects.css";
 import criqTitleImg from "../images/criqtitleimg.png";
 import model1Img from "../images/model1.png";
 import model2Img from "../images/model2.png";
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { initTwoFingerSwipe } from '../twoFingerSwipe'; 
 
 function CrIQ() {
+
+  const navigate = useNavigate();
+  
+    useEffect(() => {
+      const removeSwipeListener = initTwoFingerSwipe(() => {
+        console.log("Navigating home now...");
+        navigate('/'); 
+      });
+  
+      return () => removeSwipeListener();
+    }, [navigate]);
+    
   const skills = [
     "React",
     "JavaScript",

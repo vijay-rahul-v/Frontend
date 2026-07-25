@@ -1,7 +1,23 @@
 import "../Projects.css";
 import mphasisImg from "../images/mphasisimg.jpeg";
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { initTwoFingerSwipe } from '../twoFingerSwipe'; 
 
 function Mphasis() {
+
+ const navigate = useNavigate();
+
+  useEffect(() => {
+    const removeSwipeListener = initTwoFingerSwipe(() => {
+      console.log("Navigating home now...");
+      navigate('/'); 
+    });
+
+    return () => removeSwipeListener();
+  }, [navigate]);
+
+
   const skills = [
     "GitHub",
     "React.js",
@@ -13,7 +29,7 @@ function Mphasis() {
 
   return (
     <div className="page">
-      <h1 className="title">Mphasis</h1>
+      <h1 className="title">Mphasis Limited</h1>
       <h2> Metageeks Program : Trainee Software Engineer</h2>
       <br/>
 
