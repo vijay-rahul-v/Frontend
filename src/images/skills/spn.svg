@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="24" fill="#101722"/>
+  <path d="M64 22l31 18v48l-31 18-31-18V40z" fill="#1c2a3a" stroke="#f6b26b" stroke-width="6"/>
+  <path d="M64 40l18 10v28l-18 10-18-10V50z" fill="#17263a" stroke="#f6b26b" stroke-width="4"/>
+  <path d="M45 59h38" stroke="#f6b26b" stroke-width="6" stroke-linecap="round"/>
+  <path d="M53 73h22" stroke="#f6b26b" stroke-width="5" stroke-linecap="round"/>
+  <text x="64" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#f6b26b">SPN</text>
+</svg>

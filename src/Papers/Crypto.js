@@ -1,6 +1,8 @@
 import "../Projects.css";
 import cryptoImg from "../images/crypto.png";
 import bestPaperAwardImg from "../images/bestpaperaward.png";
+import blockCipherIcon from "../images/skills/block-cipher.svg";
+import spnIcon from "../images/skills/spn.svg";
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initTwoFingerSwipe } from '../twoFingerSwipe'; 
@@ -19,12 +21,12 @@ function Crypto() {
     }, [navigate]);
     
   const skills = [
-    "Block Cipher",
-    "SPN",
-    "S-box",
-    "Chaotic Mapping",
-    "Micropython",
-    "ESP-32",
+    { name: "Block Cipher", icon: blockCipherIcon },
+    { name: "SPN", icon: spnIcon },
+    { name: "S-box", icon: "https://img.icons8.com/fluency/96/box.png" },
+    { name: "Chaotic Mapping", icon: "https://img.icons8.com/fluency/96/physics.png" },
+    { name: "Micropython", icon: "https://cdn.simpleicons.org/micropython/ffffff?size=64" },
+    { name: "ESP-32", icon: "https://cdn.simpleicons.org/espressif/ffffff?size=64" },
   ];
 
   return (
@@ -66,8 +68,10 @@ to encrypt the data. Can be utilized for secure communication in IoT application
       <div className="skills-grid">
         {skills.map((skill, index) => (
           <div className="skill-card" key={index}>
-            <div className="image-placeholder">Image</div>
-            <div className="skill-name">{skill}</div>
+            <div className="image-placeholder">
+              <img src={skill.icon} alt={skill.name} loading="lazy" />
+            </div>
+            <div className="skill-name">{skill.name}</div>
           </div>
         ))}
       </div>

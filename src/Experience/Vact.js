@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "../Projects.css";
 import vactImg from "../images/vactimg.png";
+import yoctoIcon from "../images/skills/yocto.svg";
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initTwoFingerSwipe } from '../twoFingerSwipe'; 
@@ -19,12 +20,12 @@ function Vact() {
     }, [navigate]);
     
   const skills = [
-    "The Yocto Project",
-    "Buildroot",
-    "OpenEmbedded",
-    "Linux",
-    "Git",
-    "Poky",
+    { name: "The Yocto Project", icon: yoctoIcon },
+    { name: "Buildroot", icon: "https://img.icons8.com/fluency/96/processor.png" },
+    { name: "OpenEmbedded", icon: "https://img.icons8.com/fluency/96/electronics.png" },
+    { name: "Linux", icon: "https://cdn.simpleicons.org/linux/ffffff?size=64" },
+    { name: "Git", icon: "https://cdn.simpleicons.org/git/ffffff?size=64" },
+    { name: "Poky", icon: "https://img.icons8.com/fluency/96/command-line.png" },
   ];
 
   return (
@@ -53,8 +54,10 @@ function Vact() {
       <div className="skills-grid">
         {skills.map((skill, index) => (
           <div className="skill-card" key={index}>
-            <div className="image-placeholder">Image</div>
-            <div className="skill-name">{skill}</div>
+            <div className="image-placeholder">
+              <img src={skill.icon} alt={skill.name} loading="lazy" />
+            </div>
+            <div className="skill-name">{skill.name}</div>
           </div>
         ))}
       </div>

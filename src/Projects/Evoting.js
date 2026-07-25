@@ -1,6 +1,8 @@
 import "../Projects.css";
 import evoteImg from "../images/evote.png";
 import hardwareFlowImg from "../images/hardwareandflow.png";
+import rfidIcon from "../images/skills/rfid.svg";
+import lightweightCryptoIcon from "../images/skills/lightweight-crypto.svg";
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initTwoFingerSwipe } from '../twoFingerSwipe'; 
@@ -19,12 +21,12 @@ function Evoting() {
     }, [navigate]);
     
   const skills = [
-    "ESP-32",
-    "Lightweight Cryptography",
-    "MicroPython",
-    "RFID Interfacing",
-    "I2C, UART Communication",
-    "ThingSpeak",
+    { name: "ESP-32", icon: "https://cdn.simpleicons.org/espressif/ffffff?size=64" },
+    { name: "Lightweight Cryptography", icon: lightweightCryptoIcon },
+    { name: "MicroPython", icon: "https://cdn.simpleicons.org/micropython/ffffff?size=64" },
+    { name: "RFID Interfacing", icon: rfidIcon },
+    { name: "I2C, UART Communication", icon: "https://img.icons8.com/fluency/96/electronics.png" },
+    { name: "ThingSpeak", icon: "https://img.icons8.com/fluency/96/cloud.png" },
   ];
 
   return (
@@ -57,8 +59,10 @@ function Evoting() {
       <div className="skills-grid">
         {skills.map((skill, index) => (
           <div className="skill-card" key={index}>
-            <div className="image-placeholder">Image</div>
-            <div className="skill-name">{skill}</div>
+            <div className="image-placeholder">
+              <img src={skill.icon} alt={skill.name} loading="lazy" />
+            </div>
+            <div className="skill-name">{skill.name}</div>
           </div>
         ))}
       </div>

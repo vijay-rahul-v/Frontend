@@ -112,14 +112,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(246, 178, 107);
   margin-bottom: 15px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .skill-name {
   color: white;
   font-size: 1.05rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .back-link {

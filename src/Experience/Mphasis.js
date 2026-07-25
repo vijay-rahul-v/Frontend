@@ -1,5 +1,6 @@
 import "../Projects.css";
 import mphasisImg from "../images/mphasisimg.jpeg";
+import azureIcon from "../images/skills/azure.svg";
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initTwoFingerSwipe } from '../twoFingerSwipe'; 
@@ -19,12 +20,12 @@ function Mphasis() {
 
 
   const skills = [
-    "C#",
-    "ASP.NET MVC",
-    "ASP.NET WebAPI",
-    "React.js",
-    "Github REST API",
-    "Azure SWA",
+    { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+    { name: "ASP.NET MVC", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
+    { name: "ASP.NET WebAPI", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" },
+    { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Github REST API", icon: "https://cdn.simpleicons.org/github/ffffff?size=64" },
+    { name: "Azure SWA", icon: azureIcon },
   ];
 
   return (
@@ -53,8 +54,10 @@ function Mphasis() {
       <div className="skills-grid">
         {skills.map((skill, index) => (
           <div className="skill-card" key={index}>
-            <div className="image-placeholder">Image</div>
-            <div className="skill-name">{skill}</div>
+            <div className="image-placeholder">
+              <img src={skill.icon} alt={skill.name} loading="lazy" />
+            </div>
+            <div className="skill-name">{skill.name}</div>
           </div>
         ))}
       </div>

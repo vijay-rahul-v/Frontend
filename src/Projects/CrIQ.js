@@ -2,6 +2,7 @@ import "../Projects.css";
 import criqTitleImg from "../images/criqtitleimg.png";
 import model1Img from "../images/model1.png";
 import model2Img from "../images/model2.png";
+import oneHotIcon from "../images/skills/one-hot.svg";
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initTwoFingerSwipe } from '../twoFingerSwipe'; 
@@ -20,12 +21,12 @@ function CrIQ() {
     }, [navigate]);
     
   const skills = [
-    "Deep Learning",
-    "Pre-processing",
-    "Google colab",
-    "Python ML Libraries",
-    "One-Hot Encoding",
-    "Regression Models",
+    { name: "Deep Learning", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+    { name: "Pre-processing", icon: "https://img.icons8.com/fluency/96/data-configuration.png" },
+    { name: "Google colab", icon: "https://cdn.simpleicons.org/googlecolab/ffffff?size=64" },
+    { name: "Python ML Libraries", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "One-Hot Encoding", icon: oneHotIcon },
+    { name: "Regression Models", icon: "https://img.icons8.com/fluency/96/line-chart.png" },
   ];
 
   return (
@@ -58,6 +59,9 @@ and validate performance using R², MAE, and RMSE metrics.
       <div className="photo-container" style={{ maxWidth: "400px" }}>
         <img src={model1Img} alt="Model 1 forecasting" />
       </div>
+      <p>Fig 1: Predicted vs Actual Scores Plot</p>
+      <br/>
+      <br/>
       <h2 className="description-title">Model 2: Field Placement Prediction</h2>
       <div className="description">
         <p>The Field Prediction module recommends optimal field placements for every delivery by analyzing contextual match information such as batsman, bowler, delivery characteristics, and game situation. A deep learning classification model predicts the most suitable fielder positions to reduce scoring opportunities. These predicted field placements are then used in match simulations to estimate the runs that could be saved. The system evaluates different machine learning regression models to measure overall effectiveness and forecasting accuracy. Performance is assessed using metrics including MAE, RMSE, and average run-saving percentage. Ball-by-ball analysis demonstrates that the proposed strategy can significantly reduce the opponent's total score through intelligent field placement.</p>
@@ -65,13 +69,19 @@ and validate performance using R², MAE, and RMSE metrics.
       <div className="photo-container">
         <img src={model2Img} alt="Model 2 placement" />
       </div>
+      <p>Fig 2 : Line and Length vs Field Position(Model Predicted Effectiveness)</p>
+      <br/>
+      <br/>
+      
       <h2 className="section-title">Skills Involved</h2>
 
       <div className="skills-grid">
         {skills.map((skill, index) => (
           <div className="skill-card" key={index}>
-            <div className="image-placeholder">Image</div>
-            <div className="skill-name">{skill}</div>
+            <div className="image-placeholder">
+              <img src={skill.icon} alt={skill.name} loading="lazy" />
+            </div>
+            <div className="skill-name">{skill.name}</div>
           </div>
         ))}
       </div>
